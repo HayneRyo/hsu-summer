@@ -1,14 +1,8 @@
-import Person from './modules/person.es6';
+import Vue from 'vue';
+import Sample from './component/sample.vue';
 
-class Friend extends Person{
-    constructor(name) {
-      super(name);
-    }
-    callName() {
-      alert(this.name);
-    }
-}
-
-var friend = new Friend('Ryo');
-
-friend.callName();
+new Vue({
+  el: '#sample',
+  components: { Sample },
+  template: '<Sample />'
+});
