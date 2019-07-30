@@ -11,5 +11,8 @@
     "url": "github-trepe:HayneRyo/hsu-summer.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
