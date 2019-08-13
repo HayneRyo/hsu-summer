@@ -4,8 +4,9 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "server": "http-server ./dist"
+    "build": "gulp",
+    "server": "http-server ./dist",
+    "dev-server": "http-server ./dist & gulp"
   },
   "repository": {
     "type": "git",
