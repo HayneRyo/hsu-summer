@@ -51,7 +51,7 @@
   box-sizing: border-box;
   animation: itemIn 600ms ease-out 0s forwards;
 }
-.container.youtube .item:nth-child(2){ animation-delay: 100ms; }
+.container.youtube .item:nth-child(2){ animation-delay: 99ms; }
 .container.youtube .item:nth-child(3){ animation-delay: 200ms; }
 .container.youtube .item:nth-child(4){ animation-delay: 300ms; }
 .container.youtube .item:nth-child(5){ animation-delay: 400ms; }
