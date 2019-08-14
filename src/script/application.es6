@@ -2,8 +2,11 @@ import Vue from 'vue';
 import Sample1 from './component/sample1.vue';
 import Sample2 from './component/sample2.vue';
 import Sample3 from './component/sample3.vue';
+<<<<<<< Updated upstream
 import Sample4 from './component/sample4.vue';
 import ModalSample from './component/modal-sample.vue';
+=======
+>>>>>>> Stashed changes
 import Menu1 from './component/menu1.vue';
 import Menu2 from './component/menu2.vue';
 import Menu3 from './component/menu3.vue';
@@ -27,12 +30,15 @@ new Vue({
 });
 
 new Vue({
+<<<<<<< Updated upstream
   el: "#modal-sample",
   components: { ModalSample },
   template: '<ModalSample />'
 });
 
 new Vue({
+=======
+>>>>>>> Stashed changes
   el: "#menu1",
   components: { Menu1 },
   template: '<Menu1 />'
@@ -48,6 +54,7 @@ new Vue({
   el: "#menu3",
   components: { Menu3 },
   template: '<Menu3 />'
+<<<<<<< Updated upstream
 });
 
 new Vue({
@@ -61,3 +68,6 @@ new Vue({
   components: { ModalSample },
   template: '<ModalSample />'
 });
+=======
+});
+>>>>>>> Stashed changes
