@@ -1,6 +1,6 @@
 <template lang='pug'>
   div
-    h1.title {{ greeting }} {{ name }}!
+    h1 {{ greeting }} {{ name }}!
 </template>
 
 <script>

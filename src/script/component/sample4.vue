@@ -1,8 +1,8 @@
 <template lang='pug'>
   section.container
-    h1 Youtubeとりにいくでぇ😜
-    input(type="text", v-model="keyword", placeholder="Enter a keyword to fetch in YouTube", class="input")
-    button(v-on:click="search") 探す
+    h2 Youtubeとりにいくでぇ😜
+    input.input(type="text", v-model="keyword", placeholder="Enter a keyword to fetch in YouTube")
+    button.button(v-on:click="search") 探す
     ul.list
       li.item(v-for="item in items" v-bind:keys="item.id.videoId")
         a.link(v-bind:href="'https://youtube.com/watch?v=' + item.id.videoId" target="_blank")
@@ -31,22 +31,21 @@
 </script>
 
 <style scoped>
-  .container {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 2px;
-    background-color: #fff;
-    color: #333;
-  }
   .input {
-    min-width: 500px;
+    width: 500px;
+    max-width: 100%;
+  }
+  .button {
+    margin-left: 10px;
   }
   .list {
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+  .list:empty {
+    margin: 0;
   }
   .item {
     list-style: none;

@@ -1,6 +1,6 @@
 <template lang='pug'>
   section.container
-    h1 Dialog Sample
+    h2 Dialog Sample
     p
       span Please click this button　→　
       button(v-on:click='open') open modal
@@ -41,11 +41,6 @@
 </script>
 
 <style scoped>
-.container {
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid #fff;
-}
 .modal {
   position: fixed;
   top: 0;
