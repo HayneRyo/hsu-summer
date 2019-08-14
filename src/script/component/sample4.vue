@@ -7,8 +7,9 @@
       li.item(v-for="item in items" v-bind:keys="item.id.videoId")
         a.link(v-bind:href="'https://youtube.com/watch?v=' + item.id.videoId" target="_blank")
           h2 {{ item.snippet.title }}
-          img.image(v-bind:src="item.snippet.thumbnails.default.url")
-          p {{ item.snippet.description }}
+          div.wrap
+            img.image(v-bind:src="item.snippet.thumbnails.default.url")
+            p {{ item.snippet.description }}
 </template>
 
 <script>
@@ -44,14 +45,14 @@
   opacity: 0;
   list-style: none;
   width: calc(50% - 0.5em);
-  padding: 1em;
+  padding: 1.4em 1.4em 1.6em;
   margin-bottom: 1em;
   background: #fff;
   border-radius: 2px;
   box-sizing: border-box;
   animation: itemIn 600ms ease-out 0s forwards;
 }
-.container.youtube .item:nth-child(2){ animation-delay: 99ms; }
+.container.youtube .item:nth-child(2){ animation-delay: 100ms; }
 .container.youtube .item:nth-child(3){ animation-delay: 200ms; }
 .container.youtube .item:nth-child(4){ animation-delay: 300ms; }
 .container.youtube .item:nth-child(5){ animation-delay: 400ms; }
@@ -62,7 +63,6 @@
 .container.youtube .item:nth-child(10){ animation-delay: 900ms; }
 .container.youtube .item:nth-child(11){ animation-delay: 1000ms; }
 .container.youtube .item:nth-child(12){ animation-delay: 1100ms; }
-
 @keyframes itemIn {
   0% {
     opacity: 0;
@@ -70,6 +70,14 @@
   100% {
     opacity: 1;
   }
+}
+.container.youtube .item .wrap{
+  display: flex;
+  color: #999;
+  font-size: 13px;
+}
+.container.youtube .item img{
+  margin-right: 1em;
 }
 .input {
   width: 500px;
