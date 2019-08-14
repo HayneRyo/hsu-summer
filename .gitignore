@@ -2,3 +2,4 @@ node_modules
 dist/script/*
 dist/css/*
 dist/*.html
+.node-version
