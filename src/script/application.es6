@@ -30,15 +30,12 @@ new Vue({
 });
 
 new Vue({
-<<<<<<< Updated upstream
   el: "#modal-sample",
   components: { ModalSample },
   template: '<ModalSample />'
 });
 
 new Vue({
-=======
->>>>>>> Stashed changes
   el: "#menu1",
   components: { Menu1 },
   template: '<Menu1 />'
