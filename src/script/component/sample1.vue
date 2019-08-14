@@ -13,8 +13,5 @@
 </script>
 
 <style scoped>
-  .title {
-    border-bottom: 1px dotted #fff;
-  }
 </style>
 

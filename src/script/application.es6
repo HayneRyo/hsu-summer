@@ -2,7 +2,13 @@ import Vue from 'vue';
 import Sample1 from './component/sample1.vue';
 import Sample2 from './component/sample2.vue';
 import Sample3 from './component/sample3.vue';
+<<<<<<< Updated upstream
 import ModalSample from './component/modal-sample.vue';
+=======
+import Menu1 from './component/menu1.vue';
+import Menu2 from './component/menu2.vue';
+import Menu3 from './component/menu3.vue';
+>>>>>>> Stashed changes
 
 new Vue({
   el: "#sample1", // アプリをマウントする要素(セレクタで指定)
@@ -23,7 +29,25 @@ new Vue({
 });
 
 new Vue({
+<<<<<<< Updated upstream
   el: "#modal-sample",
   components: { ModalSample },
   template: '<ModalSample />'
+=======
+  el: "#menu1",
+  components: { Menu1 },
+  template: '<Menu1 />'
+});
+
+new Vue({
+  el: "#menu2",
+  components: { Menu2 },
+  template: '<Menu2 />'
+});
+
+new Vue({
+  el: "#menu3",
+  components: { Menu3 },
+  template: '<Menu3 />'
+>>>>>>> Stashed changes
 });
