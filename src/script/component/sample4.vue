@@ -49,16 +49,17 @@
   }
   .item {
     list-style: none;
-    margin: 5px;
+    margin: 10px 5px;
     padding: 20px;
     width: calc(50% - 20px);
-    box-shadow: rgba(0,0,0,0.2) 0 2px 2px;
+    border: 1px solid rgba(255,255,255,.4);
     border-radius: 2px;
     box-sizing: border-box;
   }
   .link {
-    color: #333;
+    color: #fff;
     text-decoration: none;
+    word-break: break-all;
   }
   .image {
     margin: 0 auto
