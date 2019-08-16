@@ -8,7 +8,8 @@
         a.link(v-bind:href="'https://youtube.com/watch?v=' + item.id.videoId" target="_blank")
           h2 {{ item.snippet.title }}
           div.wrap
-            img.image(v-bind:src="item.snippet.thumbnails.default.url")
+            figure
+              img.image(v-bind:src="item.snippet.thumbnails.default.url")
             p {{ item.snippet.description }}
 </template>
 
@@ -44,12 +45,12 @@
 .container.youtube .item{
   opacity: 0;
   list-style: none;
-  width: calc(50% - 0.5em);
+  width: calc(33.333% - 0.5em);
   padding: 1.4em 1.4em 1.6em;
   margin-bottom: 1em;
   background: #fff;
-  border-radius: 2px;
-  box-sizing: border-box;
+  border-radius: 3px;
+  word-break: break-all;
   animation: itemIn 600ms ease-out 0s forwards;
 }
 .container.youtube .item:nth-child(2){ animation-delay: 100ms; }
@@ -76,8 +77,13 @@
   color: #999;
   font-size: 13px;
 }
-.container.youtube .item img{
+.container.youtube .item figure{
   margin-right: 1em;
+  min-width: 128px;
+}
+.container.youtube .item figure img{
+  width: 100%;
+  height: auto;
 }
 .input {
   width: 500px;
@@ -90,7 +96,18 @@
   color: #333;
   text-decoration: none;
 }
-.image {
-  margin: 0 auto
+/*
+  Responcive
+*/
+@media only screen and (max-width: 1480px){
+  .container.youtube .item{
+    width: calc(50% - 0.5em);
+  }
 }
+@media only screen and (max-width: 920px){
+  .container.youtube .item{
+    width: 100%;
+  }
+}
+
 </style>
