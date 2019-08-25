@@ -49,7 +49,7 @@ gulp.task('pug', () =>
 // 監視と処理の自動化
 gulp.task('default', () => {
   gulp.watch('src/script/**/*.es6', gulp.task('script'));
-  gulp.watch('src/script/**/*.vue', gulp.task('script'));
+  gulp.watch('src/script/**/*.jsx', gulp.task('script'));
   gulp.watch('src/sass/**/*.sass', gulp.task('sass'));
   gulp.watch('src/pug/**/*.pug', gulp.task('pug'));
 });
