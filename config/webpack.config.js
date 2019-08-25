@@ -4,7 +4,7 @@ module.exports = {
   // 起動モード
   mode: "development",
   // エントリーポイント
-  entry: "./src/script/application.es6",
+  entry: "./src/script/app.es6",
   // 出力設定
   output: {
     // 出力ファイル名
@@ -17,7 +17,7 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.es6$/,
+        test: /\.(es6|js)$/,
         loader: 'babel-loader',
       },
       {

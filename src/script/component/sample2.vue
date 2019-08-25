@@ -1,8 +1,9 @@
 <template lang='pug'>
-  section.container
-    h2 Binding Sample
-    p Hello! {{name}}!
-    input(type="text", v-model="name", placeholder="enter a name here")
+  section.template-container
+    div
+      h2 Binding Sample
+      p Hello! {{name}}!
+      input(type="text", v-model="name", placeholder="enter a name here")
 </template>
 
 <script>

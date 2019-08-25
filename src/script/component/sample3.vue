@@ -1,9 +1,10 @@
 <template lang='pug'>
-  section.container
-    h2 Action Sample
-    p Current is {{count}}.
-    button(v-on:click="increment") increment
-    button(v-on:click="decrement") decrement
+  section.template-container
+    div
+      h2 Action Sample
+      p Current is {{count}}.
+      button(v-on:click="increment") increment
+      button(v-on:click="decrement") decrement
 </template>
 
 <script>

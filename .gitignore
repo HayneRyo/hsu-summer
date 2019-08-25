@@ -3,3 +3,4 @@ dist/script/*
 dist/css/*
 dist/*.html
 .node-version
+.DS_Store

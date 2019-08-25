@@ -1,5 +1,5 @@
 <template lang='pug'>
-  div
+  div.template-container
     h1 {{ greeting }} {{ name }}!
 </template>
 

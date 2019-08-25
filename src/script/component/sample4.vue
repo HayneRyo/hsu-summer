@@ -1,20 +1,21 @@
 <template lang='pug'>
-  section.container.youtube(v-bind:class="{active:isSearch}")
+  section.container.template-container.youtube(v-bind:class="{active:isSearch}")
     div.overlay
       div.ol-face-wrap
        span.ol-face 😜
-    h2 Youtubeとりにいくでぇ
-      span.face 😜
-    input.input(type="text", v-model="keyword", placeholder="Enter a keyword to fetch in YouTube")
-    button.button(v-on:click="search(); isSearch=true") 探す
-    ul.list
-      li.item(v-for="item in items" v-bind:keys="item.id.videoId")
-        a.link(v-bind:href="'https://youtube.com/watch?v=' + item.id.videoId" target="_blank")
-          h2 {{ item.snippet.title }}
-          div.wrap
-            figure
-              img.image(v-bind:src="item.snippet.thumbnails.default.url")
-            p {{ item.snippet.description }}
+    div
+      h2 Youtubeとりにいくでぇ
+        span.face 😜
+      input.input(type="text", v-model="keyword", placeholder="Enter a keyword to fetch in YouTube")
+      button.button(v-on:click="search(); isSearch=true") 探す
+      ul.list
+        li.item(v-for="item in items" v-bind:keys="item.id.videoId")
+          a.link(v-bind:href="'https://youtube.com/watch?v=' + item.id.videoId" target="_blank")
+            h2 {{ item.snippet.title }}
+            div.wrap
+              figure
+                img.image(v-bind:src="item.snippet.thumbnails.default.url")
+              p {{ item.snippet.description }}
 </template>
 
 <script>
@@ -68,7 +69,7 @@
   width: calc(33.333% - 0.5em);
   padding: 1.4em 1.4em 1.6em;
   margin-bottom: 1em;
-  background: #fff;
+  background: #efefef;
   border-radius: 3px;
   word-break: break-all;
   animation: itemIn 800ms ease-out 0s forwards;
