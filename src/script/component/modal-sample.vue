@@ -40,25 +40,23 @@
   }
 </script>
 
-<style scoped>
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255,255,255, 0.3);
-}
-.modal__container {
-  display: block;
-  width: 80%;
-  height: 80%;
-  padding: 10px 20px;
-  background: #fff;
-  color: #000;
-}
+<style module lang='sass'>
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  width: 100%
+  height: 100%
+  justify-content: center
+  align-items: center
+  background: rgba(255,255,255, 0.3)
+  &__container
+    display: block
+    width: 80%
+    height: 80%
+    padding: 10px 20px
+    background: #fff
+    color: #000
 </style>
 
