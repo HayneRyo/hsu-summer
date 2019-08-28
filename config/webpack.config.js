@@ -22,11 +22,19 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        oneOf: [
+        loader: 'pug-plain-loader',
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
           {
-            resourceQuery: /^\?vue/,
-            use: ['pug-plain-loader']
-          },
+            loader: 'sass-loader',
+            options: {
+              indentedSyntax: true
+            }
+          }
         ]
       },
       {
