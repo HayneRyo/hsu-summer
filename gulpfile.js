@@ -6,6 +6,7 @@ const minifyCss = require('gulp-minify-css');
 const rename = require('gulp-rename');
 const autoprefixer =require('gulp-autoprefixer');
 const pug = require('gulp-pug');
+const browserSync = require('browser-sync').create();
 
 // webpackの設定ファイルを読み込み
 const webpackConfig = require('./config/webpack.config');
@@ -45,11 +46,28 @@ gulp.task('pug', () =>
     .pipe(gulp.dest('dist/'))
 );
 
+gulp.task('server', (done) => {
+  browserSync.init({
+    server: {
+      baseDir: "dist/",
+      index  : "index.html"
+    }
+  });
+  done();
+});
+
+gulp.task('browser-reload', (done) => {
+  browserSync.reload();
+  done();
+});
 
 // 監視と処理の自動化
-gulp.task('default', () => {
+gulp.task('watch', () => {
   gulp.watch('src/script/**/*.es6', gulp.task('script'));
   gulp.watch('src/script/**/*.vue', gulp.task('script'));
   gulp.watch('src/sass/**/*.sass', gulp.task('sass'));
   gulp.watch('src/pug/**/*.pug', gulp.task('pug'));
+  gulp.watch('dist/**/*', gulp.task('browser-reload'));
 });
+
+gulp.task('default', gulp.series(gulp.parallel('script', 'sass', 'pug'), 'server', 'watch'));
