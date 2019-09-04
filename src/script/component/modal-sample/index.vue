@@ -7,21 +7,23 @@
     // モーダル
     .modal(v-show='active')
       .modal__container
-        article(v-show='page == 1')
-          h1 １ページ
-          button(v-on:click='linkTo(2)') go to 2
-        article(v-show='page == 2')
-          h1 ２ページ
-          button(v-on:click='linkTo(1)') go to 1
-          button(v-on:click='linkTo(3)') go to 3
-        article(v-show='page == 3')
-          h1 ３ページ
-          button(v-on:click='linkTo(2)') go to 2
+        Scene1(v-show='page == 1', v-on:linkTo='linkTo')
+        Scene2(v-show='page == 2', v-on:linkTo='linkTo')
+        Scene3(v-show='page == 3', v-on:linkTo='linkTo')
         button(v-on:click='close') close modal
 </template>
 
 <script>
+  import Scene1 from './scene1.vue';
+  import Scene2 from './scene2.vue';
+  import Scene3 from './scene3.vue';
+
   export default {
+    components: {
+      Scene1,
+      Scene2,
+      Scene3
+    },
     data: () => ({
       active: false,
       page: 1,

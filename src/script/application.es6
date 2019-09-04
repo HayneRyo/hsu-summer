@@ -3,7 +3,7 @@ import Sample1 from './component/sample1.vue';
 import Sample2 from './component/sample2.vue';
 import Sample3 from './component/sample3.vue';
 import Sample4 from './component/sample4.vue';
-import ModalSample from './component/modal-sample.vue';
+import ModalSample from './component/modal-sample/index.vue';
 import Menu1 from './component/menu1.vue';
 import Menu2 from './component/menu2.vue';
 import Menu3 from './component/menu3.vue';
