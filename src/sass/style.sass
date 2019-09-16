@@ -1,3 +1,150 @@
+//
+//html5doctor.com Reset Stylesheet
+//v1.6.1
+//Last Updated: 2010-09-17
+//Author: Richard Clark - http://richclarkdesign.com
+//Twitter: @rich_clark
+//
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video
+    margin: 0
+    padding: 0
+    border: 0
+    outline: 0
+    font-size: 100%
+    vertical-align: baseline
+    background-color: transparent
+
+
 body
-  color: black
-  background: white
+    line-height: 1
+
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section
+    display: block
+
+
+nav ul
+    list-style: none
+
+
+blockquote, q
+    quotes: none
+
+
+blockquote:before, blockquote:after,
+q:before, q:after
+    content: ''
+    content: none
+
+
+a
+    margin: 0
+    padding: 0
+    font-size: 100%
+    vertical-align: baseline
+    background: transparent
+
+
+/* change colours to suit your needs */
+ins
+    background-color: #ff9
+    color: #000
+    text-decoration: none
+
+
+/* change colours to suit your needs */
+mark
+    background-color: #ff9
+    color: #000
+    font-style: italic
+    font-weight: bold
+
+
+del
+    text-decoration: line-through
+
+
+abbr[title], dfn[title]
+    border-bottom: 1px dotted
+    cursor: help
+
+
+table
+    border-collapse: collapse
+    border-spacing: 0
+
+
+/* change border colour to suit your needs */
+hr
+    display: block
+    height: 1px
+    border: 0
+    border-top: 1px solid #cccccc
+    margin: 1em 0
+    padding: 0
+
+
+input, select
+    vertical-align: middle
+
+
+// ==============================================
+//  初期値
+// ==============================================
+*
+  box-sizing: border-box
+  background-clip: padding-box
+html
+  background: #333
+  font-size: 62.5%
+  height: 100%
+body
+  -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  cursor: default
+  font-display: swap
+  line-height: 1.5
+  letter-spacing: #{(50/1000)}em
+  font-size: 1.4rem
+  font-family: "Noto Sans JP", sans-serif
+  color: #fff
+input[type='button'], input[type='submit']
+  -webkit-appearance: none
+textarea, input[type='text']
+  margin: 0
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+ol, ul, li
+  list-style: none
+em, strong
+  font-style: normal
+  font-weight: normal
+i
+  display: inline-block
+  font-style: normal
+a
+  text-decoration: none
+svg
+  display: inline-block
+  vertical-align: baseline
+
+canvas
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: -1
