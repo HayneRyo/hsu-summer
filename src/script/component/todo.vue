@@ -1,16 +1,21 @@
 <template lang='pug'>
   section
     #app
-      h2 Todo LIST
-      form(v-on:submit.prevent)
-        input(type="text" v-model="newItem")
-        button(v-on:click="addItem") 追加
-      ul
-        li(v-for="(todo,index) in todos")
-          input(type="checkbox" v-model="todo.isDone")
-          span(v-bind:class="{done:todo.isDone}") {{todo.item}}
-          button(v-on:click="deleteItem(index)") 削除
-      <pre>{{$data}}</pre>
+      header
+        h2 TODO LIST
+        form(v-on:submit.prevent)
+          input(type="text" v-model="newItem")
+          button(v-on:click="addItem")
+            i(class="fas fa-plus-circle")
+            span 追加
+      div#lists
+        ul
+          li(v-for="(todo,index) in todos" v-bind:class="{done:todo.isDone}")
+            label(class="checkbox")
+              input(type="checkbox" v-model="todo.isDone")
+              span {{todo.item}}
+            label(class="button")
+              button(v-on:click="deleteItem(index)") 削除
 </template>
 
 <script>
@@ -39,8 +44,8 @@
 </script>
 
 <style scoped lang='sass'>
-ul
-  list-style: none
+body
+  padding: 100px
 li > span.done
   text-decoration: line-through
 </style>
