@@ -1,3 +1,5 @@
+// 変数
+  
 $color_cotentMain: #666
 $color_uiBase_1: #dbf1ff
 $color_uiBase_2: #f6fbff
@@ -14,7 +16,8 @@ $radius_1: 4px
 
 $trasition_1: all ease 300ms
 
-  
+
+// reset
   
 *
   margin: 0
@@ -27,6 +30,8 @@ button:focus
   outline: 0
   border: none
 
+
+// main
 
 body
   color: $color_cotentMain
@@ -95,7 +100,7 @@ body
           color: #fff
           content: "\f058"
           opacity: 0
-          transition: opacity 300ms 200ms ease
+          transition: opacity 0ms 0ms ease
         input[type="checkbox"]
           display: none
       label.button
@@ -120,6 +125,7 @@ body
         padding-left: 2.5em
         &::before
           opacity: 1
+          transition: opacity 300ms 200ms ease
           input[type="checkbox"]
             display: none
         span::before

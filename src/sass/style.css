@@ -108,7 +108,7 @@ body {
   color: #fff;
   content: "\f058";
   opacity: 0;
-  transition: opacity 300ms 200ms ease;
+  transition: opacity 0ms 0ms ease;
 }
 
 #app #lists li label.checkbox input[type="checkbox"] {
@@ -149,6 +149,7 @@ body {
 
 #app #lists li.done label.checkbox::before {
   opacity: 1;
+  transition: opacity 300ms 200ms ease;
 }
 
 #app #lists li.done label.checkbox::before input[type="checkbox"] {
