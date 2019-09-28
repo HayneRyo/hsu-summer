@@ -1,0 +1,41 @@
+// ==============================================
+//  FONT SIZE CLASS
+// ==============================================
+.u-fs-
+  @for $size from 10 through 30
+    &#{$size}
+      font-size: #{$size / 10}rem!important
+  //(12px)
+  &sm
+    font-size: 1.2rem!important
+  //(16px)
+  &md
+    font-size: 1.6rem!important
+  //(20px)
+  &lg
+    font-size: 2.0rem!important
+  //(24px)
+  &xlg
+    font-size: 2.4rem!important
+  //(32px)
+  &xxlg
+    font-size: 3.2rem!important
+
+// ==============================================
+//  FONT COLOR CLASS
+// ==============================================
+.u-fc-
+  @each $key, $color in $fontColors
+    &#{$key}
+      color: #{$color}!important
+
+// ==============================================
+//  FONT WEIGHT CLASS
+// ==============================================
+.u-fw-
+  &light
+    font-weight: $font-light!important
+  &normal
+    font-weight: $font-normal!important
+  &bold
+    font-weight: $font-bold!important

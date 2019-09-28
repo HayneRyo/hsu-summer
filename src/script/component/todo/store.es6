@@ -11,7 +11,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     increment: 1,
-    todos: [],
+    todos: [{id: 0, comment: 'sample', status: false}],
   },
   mutations: {
   	insert: (state, comment) => {

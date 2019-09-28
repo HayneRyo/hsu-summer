@@ -1,0 +1,29 @@
+//--
+// Grid system
+// @author ryo-as
+//
+
+.l-grid
+  display: flex
+  width: 100%
+  flex-wrap: wrap
+  &__col
+    @for $size from 1 through $gridColumns
+      &#{$size}
+        flex: 0 0 percentage($size / $gridColumns)
+        max-width: percentage($size / $gridColumns)
+
+//--
+// Grid container
+// @author ryo-as
+//
+@mixin grid-container
+  @extend .l-grid
+
+//--
+// Grid item
+// @params {Integer} $size - column width
+// @author ryo-as
+//
+@mixin grid-col($size)
+  @extend  .l-grid__col#{$size}

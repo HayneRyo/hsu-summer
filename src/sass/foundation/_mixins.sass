@@ -1,0 +1,11 @@
+//--
+// キャッシュサーバーを参照
+// @params {String} $path - image path
+// @params {String} $option - options for background props
+// @author ryo-as
+//
+@mixin background-cash($path, $option:"")
+  @if $option == ""
+    background-image: url("#{$cacheSever}#{$path}")
+  @else
+    background: url("#{$cacheSever}#{$path}") $option

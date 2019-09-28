@@ -1,24 +1,29 @@
 <template lang='pug'>
-  section
+  .app
     // 登録用コンポーネント
-    regiser
+    register
     // TODOリスト表示
     todos
 </template>
 
 <script>
-  import Regiser from './regiser.vue';
+  import Register from './register.vue';
   import Todos from './todos.vue';
   
   export default {
     // コンポーネント
     components: {
-      Regiser,
+      Register,
       Todos
     },
   }
 </script>
 
 <style scoped lang='sass'>
+.app
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 100%
 </style>
 

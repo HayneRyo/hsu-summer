@@ -1,5 +1,5 @@
 <template lang='pug'>
-  ul
+  ul.todos
     todo(v-for='todo in todos' :key='todo.id' :todo='todo')
 </template>
 
@@ -22,5 +22,9 @@
 </script>
 
 <style scoped lang='sass'>
+.todos
+  flex: 1
+  overflow-y: scroll
+  overflow-x: hidden
 </style>
 
