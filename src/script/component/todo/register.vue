@@ -25,8 +25,7 @@
 <style scoped lang='sass'>
 .register
   width: 100%
-  padding: 15px
-  border-bottom: 1px solid #eee
+  padding: 10px 15px 5px
   &__container
     display: flex
     width: 100%

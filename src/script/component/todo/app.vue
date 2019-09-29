@@ -2,6 +2,8 @@
   .app
     // 登録用コンポーネント
     register
+    // ゲージ
+    gauge
     // TODOリスト表示
     todos
 </template>
@@ -9,12 +11,14 @@
 <script>
   import Register from './register.vue';
   import Todos from './todos.vue';
+  import Gauge from './gauge.vue';
   
   export default {
     // コンポーネント
     components: {
       Register,
-      Todos
+      Todos,
+      Gauge,
     },
   }
 </script>

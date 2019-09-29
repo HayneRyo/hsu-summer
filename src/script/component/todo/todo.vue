@@ -69,7 +69,8 @@
     align-items: center
     height: 24px
     width: 24px
-    font-size: 1.8rem
+    // font-size: 1.8rem
+    font-weight: bold
     color: #fff
     background: #42b983
     border: none
