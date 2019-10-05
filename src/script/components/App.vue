@@ -21,11 +21,15 @@
         input(type='number' v-model='heights' class='balloon__input')
         |cmだと
         br
-        |約
-        strong.balloon__strong(v-model='distance') {{ distance.toFixed(1) }}
-        |kmになるよ！
-        p.balloon__note(v-if='Math.floor(earths)') 地球約{{ earths.toFixed(1) }}周できるね🌏
-
+        strong.balloon__strong
+          |約
+          span(v-model='distance') {{ distance.toFixed(1) }}
+          |km
+        |になるよ！
+        transition(v-if='Math.floor(earths)',name='balloon__note',appear)
+          p.balloon__note 地球を{{ earths.toFixed(1) }}周できるね🌏
+        transition(v-if='Math.floor(earths)',name='balloon__knight',appear)
+          img(src='images/img_slimeknight.png',class='balloon__knight')
 </template>
 
 <script>
@@ -115,13 +119,39 @@
 
 .balloon
   margin-top: 20px
-  padding: 10px
-  border-radius: 40px
+  padding: 14px
+  position: relative
+  border-radius: 20px
   background-color: #f7fafc
   text-align: center
+  font-size: 1.2rem
+  line-height: 1.75
   &__input
     margin: 0 2px
     width: 40px
+  &__strong
+    font-weight: bold
+  &__note
+    margin-top: 4px
+    &-enter-active, &-leave-active
+      transition: opacity .4s
+    &-enter, &-leave-to
+      opacity: 0
+  &__knight
+    position: absolute
+    right: -20px
+    bottom: -12px
+    display: block
+    width: 71px
+    height: 85px
+    object-fit: contain
+    filter: drop-shadow(0 2px 8px #fff)
+    &-enter-active, &-leave-active
+      transition: opacity .4s
+    &-enter-active
+    animation: knightAppears 2.4s linear
+    &-enter, &-leave-to
+      opacity: 0
 
 @keyframes slimeJump
   0%, 40%
@@ -141,5 +171,21 @@
     background-position: center center
   100%
     background-position: right center
+
+@keyframes knightAppears
+  0%
+    opacity: 0
+    transform: translateX(30px)
+  20%, 35%
+    transform: translateX(0) rotateY(0deg)
+    opacity: 1
+  50%, 65%
+    transform: rotateY(180deg)
+  75%, 85%
+    transform: rotateY(0deg)
+  90%, 95%
+    transform: rotateY(180deg)
+  100%
+    transform: rotateY(0deg)
 </style>
 
