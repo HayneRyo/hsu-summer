@@ -45,6 +45,12 @@
       earths: 0,
     }),
     methods: {
+      pointsToSteps: function (points = null) {
+        this.steps =  Math.floor((points || this.points) / 40 * 1000);
+      },
+      pointsToGachas: function (points = null) {
+        this.gachas = Math.floor((points || this.points) / 1000);
+      },
       calculateDistance: function () {
         this.distance = (this.heights * 0.45 * 0.00001) * this.steps;
         this.earths = this.distance / 12742;
@@ -52,18 +58,18 @@
     },
     watch: {
       steps: function (steps) {
-        this.points = (steps / 1000) * 40;
-        this.gachas = this.points / 1000;
+        this.points = Math.floor(steps / 1000 * 40);
+        this.pointsToGachas();
         this.calculateDistance();
       },
       points: function (points) {
-        this.steps =  (points / 40) * 1000;
-        this.gachas = points / 1000;
+        this.pointsToSteps(points);
+        this.pointsToGachas(points);
         this.calculateDistance();
       },
       gachas: function (gachas) {
-        this.points = gachas * 1000;
-        this.steps = (this.points / 40) * 1000;
+        this.points = Math.floor(gachas * 1000);
+        this.pointsToSteps();
         this.calculateDistance();
       },
       heights: function (heights) {
@@ -83,6 +89,7 @@
     max-width: 300px
     margin: 0 auto
     box-shadow: 0 2px 3.7px .3px rgba(#333, .2)
+    overflow: hidden
   &__slime
     display: block
     width: 30px
@@ -149,19 +156,23 @@
     &-enter-active, &-leave-active
       transition: opacity .4s
     &-enter-active
-    animation: knightAppears 2.4s linear
-    &-enter, &-leave-to
-      opacity: 0
+      animation: knightAppears 2s linear
+    &-leave-active
+      animation: knightFades .6s linear
 
 @keyframes slimeJump
-  0%, 40%
-    transform: translateY(0) rotateY(0deg)
+  0%, 30%
+    transform: translateY(0) rotate(0)
+  40%
+    transform: translateY(-4px)
+  45%
+    transform: translateY(0)
     filter: drop-shadow(0 4px 4px rgba(#333,.3)) brightness(120%)
   50%
-    transform: translateY(-4px) rotateY(180deg)
-    filter: drop-shadow(0 8px 2px rgba(#333,.4))
+    transform: translateY(-4px)
+    filter: drop-shadow(0 8px 2px rgba(#333,.4)) brightness(120%)
   60%, 100%
-    transform: translateY(0) rotateY(360deg)
+    transform: translateY(0)
     filter: drop-shadow(0 4px 4px rgba(#333,.3)) brightness(120%)
 
 @keyframes textGradient
@@ -176,7 +187,7 @@
   0%
     opacity: 0
     transform: translateX(30px)
-  20%, 35%
+  15%, 35%
     transform: translateX(0) rotateY(0deg)
     opacity: 1
   50%, 65%
@@ -187,5 +198,16 @@
     transform: rotateY(180deg)
   100%
     transform: rotateY(0deg)
+
+@keyframes knightFades
+  0%
+    transform: translateY(0) rotate(0)
+  20%
+    transform: translateY(-10px) rotate(20deg)
+  40%
+    transform: translateY(0) rotate(20deg)
+  100%
+    transform: translateY(200px)
+    opacity: 0
 </style>
 
