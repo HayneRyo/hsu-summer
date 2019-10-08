@@ -1,38 +1,38 @@
 <template lang='pug'>
   .c-app
-    transition(name="fade")
-      .c-app__container(v-if='!height')
-        p.c-serif そなたの身長は何センチじゃ？
-        .c-field
-          .c-field__input
-            input.c-field__textarea(type='text' ref='height' :value='height')
-          .c-field__unit cm
-        nav.c-serif--nav
-          button.c-serif__button(v-on:click='insert') 登録
+    //- transition(name="fade")
+    .c-app__container(v-if='!height')
+      p.c-serif そなたの身長は何センチじゃ？
+      .c-field
+        .c-field__input
+          input.c-field__textarea(type='text' ref='height' :value='height')
+        .c-field__unit cm
+      nav.c-serif--nav
+        button.c-serif__button(v-on:click='insert') 登録
 
-    transition(name="fade")
-      .c-app__container(v-if='height')
-        p.c-serif(v-if='steps')
-          span {{distance}}
-          | kmほど歩く必要があるぞ
-          br
-          | 精進するのじゃぞ
-        p.c-serif(v-if='!steps')
-          | データを入力するがよい
-        .c-field
-          .c-field__input
-            input.c-field__textarea(v-model='steps')
-          .c-field__unit 歩
-        .c-field
-          .c-field__input
-            input.c-field__textarea(v-model='point')
-          .c-field__unit P
-        .c-field
-          .c-field__input
-            input.c-field__textarea(v-model='gacha')
-          .c-field__unit 回
-        nav.c-serif--nav
-          button.c-serif__button(v-on:click='reset') もどる
+    //- transition(name="fade")
+    .c-app__container(v-if='height')
+      p.c-serif(v-if='steps')
+        span {{distance}}
+        | kmほど歩く必要があるぞ
+        br
+        | 精進するのじゃぞ
+      p.c-serif(v-if='!steps')
+        | データを入力するがよい
+      .c-field
+        .c-field__input
+          input.c-field__textarea(v-model='steps')
+        .c-field__unit 歩
+      .c-field
+        .c-field__input
+          input.c-field__textarea(v-model='point')
+        .c-field__unit P
+      .c-field
+        .c-field__input
+          input.c-field__textarea(v-model='gacha')
+        .c-field__unit 回
+      nav.c-serif--nav
+        button.c-serif__button(v-on:click='reset') もどる
 </template>
 
 <script>
