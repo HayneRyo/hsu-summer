@@ -1,0 +1,39 @@
+//--
+//  Heading
+// @author ryo-as
+//
+
+%base
+  letter-spacing: .02em 
+  font-weight: bold
+  color: map-get($textColor, 'heading')
+
+.c-heading
+  &2
+    font-size: 3.2rem
+    line-height: 1.4 
+    @extend %base
+  &3
+    font-size: 2.56rem
+    line-height: 1.4 
+    @extend %base
+  &4
+    font-size : 2.133328rem
+     line-height: 1.5 
+    @extend %base
+    &--medium
+      font-weight: medium
+  &5
+    font-size: 1.828576rem
+     line-height: 1.5
+    @extend %base
+    &--medium
+      font-weight: medium
+
+//--
+// Hedding
+// @params {Integer} $level - Heading level
+// @author ryo-as
+//
+@mixin heading($level)
+  @extend  .c-heading#{$level}

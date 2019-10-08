@@ -1,0 +1,27 @@
+// ==============================================
+//  MARGIN CLASS
+// ==============================================
+@for $integer from 0 through 10
+  $size: $integer * 5
+  .u-m
+    // all
+    &a-#{$size}
+      margin: #{$size}px!important
+    // top
+    &t-#{$size}
+      margin-top: #{$size}px!important
+    // bottom
+    &b-#{$size}
+      margin-bottom: #{$size}px!important
+    // left
+    &l-#{$size}
+      margin-left: #{$size}px!important
+    // right
+    &r-#{$size}
+      margin-right: #{$size}px!important
+    &x-#{$size}
+      margin-left: #{$size}px!important
+      margin-right: #{$size}px!important
+    &y-#{$size}
+      margin-top: #{$size}px!important
+      margin-bottom: #{$size}px!important

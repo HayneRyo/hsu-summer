@@ -1,0 +1,37 @@
+//--
+// Text
+// @author ryo-as
+//
+
+.c-text
+  font-size: 1,6rem
+  line-height: 1.75
+  letter-spacing: .02em
+  $self: &
+  &--base
+    @extend #{$self}
+  &--low
+    font-size: 1,6rem
+    line-height: 1.6
+    letter-spacing: .02em
+  &--sm
+    font-size: 1.422224rem
+    line-height: 1.6
+    letter-spacing: .02em
+  &--xs
+    font-size: 1.2rem
+    line-height: 1.6
+    letter-spacing: .02em
+  &--annotation
+    font-size: 1.066672rem
+    line-height: 1.6
+    letter-spacing: .02em
+    color: map-get($textColor, 'annotation')
+
+//--
+// Text
+// @params {String} $type - style type for document
+// @author ryo-as
+//
+@mixin text($type)
+  @extend  .c-text--#{$type}
