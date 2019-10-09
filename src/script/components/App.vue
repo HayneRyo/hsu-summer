@@ -164,12 +164,12 @@
   0%, 30%
     transform: translateY(0) rotate(0)
   40%
-    transform: translateY(-4px)
+    transform: translateY(-4px) scale(.9, 1.1)
   45%
-    transform: translateY(0)
+    transform: translateY(0) scale(1.1, .9)
     filter: drop-shadow(0 4px 4px rgba(#333,.3)) brightness(120%)
   50%
-    transform: translateY(-4px)
+    transform: translateY(-4px) scale(.9, 1.1)
     filter: drop-shadow(0 8px 2px rgba(#333,.4)) brightness(120%)
   60%, 100%
     transform: translateY(0)
