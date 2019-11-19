@@ -1,18 +1,23 @@
 <template lang='pug'>
   .c-app
-    //- transition(name="fade")
-    .c-app__container(v-if='!height')
-      p.c-serif そなたの身長は何センチじゃ？
-      .c-field
-        .c-field__input
-          input.c-field__textarea(type='text' ref='height' :value='height')
-        .c-field__unit cm
-      nav.c-serif--nav
-        button.c-serif__button(v-on:click='insert') 登録
+    transition(name="fade")
+      .c-app__container(v-if='!height')
+        p.c-serif そなたの身長は何センチじゃ？
+        .c-field
+          .c-field__input
+            input.c-field__textarea(type='text' ref='height' :value='height')
+          .c-field__unit cm
+        nav.c-serif--nav
+          button.c-serif__button(v-on:click='insert') 登録
 
+<<<<<<< HEAD
     //- transition(name="fade")
     .c-app__container(v-if='height')
       transition(name="fade")
+=======
+    transition(name="fade")
+      .c-app__container(v-if='height')
+>>>>>>> 2fbbb462b7898b912e665514db0399b9ef61d58a
         p.c-serif(v-if='steps')
           span {{distance}}
           | kmほど歩く必要があるぞ
@@ -20,6 +25,7 @@
           | 精進するのじゃぞ
         p.c-serif(v-if='!steps')
           | データを入力するがよい
+<<<<<<< HEAD
       .c-field
         .c-field__input
           input.c-field__textarea(v-model='steps')
@@ -34,6 +40,22 @@
         .c-field__unit 回
       nav.c-serif--nav
         button.c-serif__button(v-on:click='reset') もどる
+=======
+        .c-field
+          .c-field__input
+            input.c-field__textarea(v-model='steps')
+          .c-field__unit 歩
+        .c-field
+          .c-field__input
+            input.c-field__textarea(v-model='point')
+          .c-field__unit P
+        .c-field
+          .c-field__input
+            input.c-field__textarea(v-model='gacha')
+          .c-field__unit 回
+        nav.c-serif--nav
+          button.c-serif__button(v-on:click='reset') もどる
+>>>>>>> 2fbbb462b7898b912e665514db0399b9ef61d58a
 </template>
 
 <script>
@@ -51,12 +73,12 @@
         this.length = value * 0.45
       },
       steps: function (value) {
-        this.point = value / 1000 * 40
-        this.distance = value * this.length / 100 / 1000
+        this.point = Math.floor(value / 1000 * 40)
+        this.distance = Math.floor(value * this.length / 100 / 1000)
       },
       point: function (value) {
-        this.steps = value * 1000 / 40;
-        this.gacha = value / 1000;
+        this.steps = Math.floor(value * 1000 / 40);
+        this.gacha = Math.floor(value / 1000);
       },
       gacha: function (value) {
         this.point = value * 1000;
