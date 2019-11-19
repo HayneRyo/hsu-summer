@@ -12,13 +12,14 @@
 
     //- transition(name="fade")
     .c-app__container(v-if='height')
-      p.c-serif(v-if='steps')
-        span {{distance}}
-        | kmほど歩く必要があるぞ
-        br
-        | 精進するのじゃぞ
-      p.c-serif(v-if='!steps')
-        | データを入力するがよい
+      transition(name="fade")
+        p.c-serif(v-if='steps')
+          span {{distance}}
+          | kmほど歩く必要があるぞ
+          br
+          | 精進するのじゃぞ
+        p.c-serif(v-if='!steps')
+          | データを入力するがよい
       .c-field
         .c-field__input
           input.c-field__textarea(v-model='steps')
